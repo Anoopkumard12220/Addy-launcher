@@ -16,6 +16,6 @@
     <string name="drawer_grid">Drawer grid size</string>
     <string name="hidden_apps">Hidden apps</string>
     <string name="dock">Dock apps</string>
-    <string name="sort_name">Name (A&ndash;Z)</string>
+    <string name="sort_name">Name (A-Z)</string>
     <string name="permission_rationale">ADDY needs to read installed apps to show them in the launcher.</string>
 </resources>
