@@ -48,10 +48,14 @@ jobs:
           echo "/opt/gradle-${GRADLE_VERSION}/bin" >> $GITHUB_PATH
 
       - name: Validate Gradle project
-        run: ./gradlew projects --no-daemon
+        run: |
+          chmod +x gradlew
+          ./gradlew projects --no-daemon
 
       - name: Compile debug APK
-        run: ./gradlew :app:assembleDebug --no-daemon
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleDebug --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
