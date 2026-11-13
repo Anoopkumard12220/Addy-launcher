@@ -19,20 +19,34 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Install Android SDK command-line tools
+        run: |
+          SDK_ROOT=/opt/android-sdk
+          CMDLINE_URL="https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip"
+          mkdir -p "$SDK_ROOT/cmdline-tools"
+          cd "$SDK_ROOT/cmdline-tools"
+          curl -fsSL "$CMDLINE_URL" -o cmdline-tools.zip
+          unzip -q cmdline-tools.zip -d latest_temp
+          mv latest_temp/cmdline-tools latest
+          rm -rf latest_temp cmdline-tools.zip
+          echo "ANDROID_HOME=$SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> $GITHUB_ENV
+          echo "$SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
+
+      - name: Accept Android SDK licenses
+        run: |
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+
+      - name: Install SDK platform and build tools
+        run: |
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
       - name: Install Gradle 8.2
         run: |
           GRADLE_VERSION=8.2
           curl -fsSL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /opt
           echo "/opt/gradle-${GRADLE_VERSION}/bin" >> $GITHUB_PATH
-
-      - name: Accept Android SDK licenses
-        run: |
-          yes | "${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
-
-      - name: Install SDK packages
-        run: |
-          "${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34" "build-tools;34.0.0"
 
       - name: Validate Gradle project
         run: gradle projects --no-daemon
