@@ -18,22 +18,12 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
         debug {
-        }
-    }
-
-    signingConfigs {
-        create("release") {
-            storeFile = project.file(System.getenv("ANDROID_KEYSTORE") ?: "release-keystore.jks")
-            storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: ""
-            keyAlias = System.getenv("ANDROID_KEY_ALIAS") ?: ""
-            keyPassword = System.getenv("ANDROID_KEY_PASSWORD") ?: ""
         }
     }
 
@@ -51,13 +41,6 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
-    }
-
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 
