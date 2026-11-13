@@ -24,6 +24,7 @@ jobs:
         with:
           packages: platforms;android-36,build-tools;34.0.0
           accept-android-sdk-licenses: true
+          log-accepted-android-sdk-licenses: true
 
       - name: Install Gradle 8.2
         run: |
