@@ -25,10 +25,6 @@ jobs:
           accept-android-sdk-licenses: true
           log-accepted-android-sdk-licenses: true
 
-      - name: Install Android SDK Platform 36 and Build Tools
-        run: |
-          "${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;34.0.0"
-
       - name: Install Gradle 8.2
         run: |
           GRADLE_VERSION=8.2
