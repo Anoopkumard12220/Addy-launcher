@@ -24,7 +24,6 @@
             android:launchMode="singleTask"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="adjustResize"
-            android:enableEdgeToEdge="true"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
