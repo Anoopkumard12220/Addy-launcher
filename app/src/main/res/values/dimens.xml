@@ -4,7 +4,7 @@
     <dimen name="spacing_m">16dp</dimen>
     <dimen name="spacing_l">24dp</dimen>
     <dimen name="spacing_xl">32dp</dimen>
-    <dimen name="card_radius">20dp</d>
+    <dimen name="card_radius">20dp</dimen>
     <dimen name="icon_container_radius">18dp</dimen>
     <dimen name="button_radius">16dp</dimen>
     <dimen name="app_icon_size">56dp</dimen>
