@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. Pure dark, custom design system. -->
-    <style name="Theme.Addy" parent="android:Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Addy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#D7D7DC</item>
         <item name="colorOnPrimary">#08090B</item>
         <item name="android:windowBackground">#08090B</item>
