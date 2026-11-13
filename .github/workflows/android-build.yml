@@ -20,10 +20,10 @@ jobs:
           java-version: 17
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v2
         with:
-          accept-android-sdk-licenses: true
-          log-accepted-android-sdk-licenses: true
+          sdk-packages: platforms;android-34,build-tools;34.0.0
+          accept-licenses: true
 
       - name: Install Gradle 8.2
         run: |
