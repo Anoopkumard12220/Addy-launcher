@@ -1,0 +1,10 @@
+<resources>
+    <color name="background">#08090B</color>
+    <color name="surface">#121316</color>
+    <color name="elevated_surface">#1B1C20</color>
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#92939A</color>
+    <color name="muted_text">#686970</color>
+    <color name="border">#292A30</color>
+    <color name="accent">#D7D7DC</color>
+</resources>

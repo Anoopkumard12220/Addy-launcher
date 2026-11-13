@@ -1,0 +1,33 @@
+# Generated files
+.gradlew
+build/
+local.properties
+*.iml
+.idea/
+*.kprj
+*.iws
+.out/
+*.class
+
+# Gradle
+.gradle/
+
+# Android
+*.apk
+*.aab
+*.dex
+*.apks
+
+# Keystores
+*.jks
+*.keystore
+signing-config.properties
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*.swo

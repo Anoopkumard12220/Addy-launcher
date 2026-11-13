@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+    <dimen name="spacing_l">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="card_radius">20dp</d>
+    <dimen name="icon_container_radius">18dp</dimen>
+    <dimen name="button_radius">16dp</dimen>
+    <dimen name="app_icon_size">56dp</dimen>
+    <dimen name="dock_icon_size">44dp</dimen>
+    <dimen name="clock_text_size">64sp</dimen>
+    <dimen name="date_text_size">18sp</dimen>
+    <dimen name="heading_text_size">20sp</dimen>
+    <dimen name="label_text_size">12sp</dimen>
+    <dimen name="bottom_bar_height">64dp</dimen>
+    <dimen name="dock_height">88dp</dimen>
+</resources>

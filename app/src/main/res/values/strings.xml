@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ADDY</string>
+    <string name="search_hint">Search apps</string>
+    <string name="search_empty">No apps found</string>
+    <string name="drawer">App drawer</string>
+    <string name="settings">Settings</string>
+    <string name="edit_mode">Edit mode</string>
+    <string name="done">Done</string>
+    <string name="remove">Remove</string>
+    <string name="hide_app">Hide app</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="clock">Clock</string>
+    <string name="date">Date</string>
+    <string name="icon_size">Icon size</string>
+    <string name="show_labels">Show labels</string>
+    <string name="drawer_grid">Drawer grid size</string>
+    <string name="hidden_apps">Hidden apps</string>
+    <string name="dock">Dock apps</string>
+    <string name="sort_name">Name (A&ndash;Z)</string>
+    <string name="permission_rationale">ADDY needs to read installed apps to show them in the launcher.</string>
+</resources>
