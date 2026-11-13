@@ -19,8 +19,18 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Install Android SDK command-line tools
+        run: |
+          SDK_DIR=$HOME/android-sdk
+          mkdir -p "$SDK_DIR/cmdline-tools"
+          cd "$SDK_DIR/cmdline-tools"
+          curl -fsSL "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" -o cmdline-tools.zip
+          unzip -q cmdline-tools.zip -d latest_temp
+          mv latest_temp/cmdline-tools latest
+          rm -rf latest_temp cmdline-tools.zip
+          echo "ANDROID_HOME=$SDK_DIR" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$SDK_DIR" >> $GITHUB_ENV
+          echo "$SDK_DIR/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
       - name: Accept Android SDK licenses
         run: |
@@ -29,6 +39,13 @@ jobs:
       - name: Install SDK packages
         run: |
           sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Install Gradle 8.2
+        run: |
+          GRADLE_VERSION=8.2
+          curl -fsSL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /opt
+          echo "/opt/gradle-${GRADLE_VERSION}/bin" >> $GITHUB_PATH
 
       - name: Validate Gradle project
         run: ./gradlew projects --no-daemon
