@@ -101,9 +101,10 @@ fun SettingsScreen(
     }
 }
 
+@Composable
 private fun settingRow(title: String, value: Boolean, onChange: (Boolean) -> Unit) {
     Row(
-        modifier = androidx.compose.foundation.layout.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -112,8 +113,9 @@ private fun settingRow(title: String, value: Boolean, onChange: (Boolean) -> Uni
     }
 }
 
+@Composable
 private fun divider() = Spacer(
-    modifier = androidx.compose.foundation.layout.fillMaxWidth()
+    modifier = Modifier.fillMaxWidth()
         .height(1.dp)
         .padding(vertical = 12.dp)
 )
