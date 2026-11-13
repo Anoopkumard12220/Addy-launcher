@@ -41,6 +41,7 @@ android {
     }
 
     composeOptions {
+        suppressKotlinVersionCompatibilityCheck = true
     }
 }
 
