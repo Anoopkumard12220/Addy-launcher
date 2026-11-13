@@ -49,10 +49,11 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.9.22"))
 
-    constraints {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22") {
-            because("Force Kotlin stdlib 1.9.22 to match Compose Compiler 1.5.8")
-        }
+    configurations.all {
+        resolutionStrategy.force("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+        resolutionStrategy.force("org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22")
+        resolutionStrategy.force("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22")
+        resolutionStrategy.force("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22")
     }
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.activity:activity-compose:1.9.0")

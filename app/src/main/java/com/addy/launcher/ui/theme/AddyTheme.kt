@@ -12,7 +12,6 @@ import com.addy.launcher.R
 private val DarkColorScheme = darkColorScheme(
     background = Color(0xFF08090B),
     surface = Color(0xFF121316),
-    surfaceContainerHighest = Color(0xFF1B1C20),
     primary = Color(0xFFD7D7DC),
     onPrimary = Color(0xFF08090B),
     primaryContainer = Color(0xFF1B1C20),
