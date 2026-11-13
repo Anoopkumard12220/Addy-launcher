@@ -25,9 +25,9 @@ fun AppIcon(
     val imageBitmap = remember(context, packageName) {
         loadIcon(context, packageName)?.toBitmap()?.toImageBitmap()
     }
-    if (imageBitmap != null) {
+    imageBitmap?.let { bitmap ->
         Image(
-            bitmap = imageBitmap,
+            bitmap = bitmap,
             modifier = modifier.size(size),
             contentDescription = null
         )
