@@ -22,12 +22,8 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
-          api-level: 36
-          target: android-36
-
-      - name: Accept Android SDK licenses
-        run: |
-          yes | "${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
+          packages: platforms;android-36,build-tools;34.0.0
+          accept-android-sdk-licenses: true
 
       - name: Install Gradle 8.2
         run: |
@@ -35,7 +31,6 @@ jobs:
           curl -fsSL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /opt
           echo "/opt/gradle-${GRADLE_VERSION}/bin" >> $GITHUB_PATH
-          echo "GRADLE_USER_HOME=/tmp/gradle-home" >> $GITHUB_ENV
 
       - name: Validate Gradle project
         run: gradle projects --no-daemon
